@@ -1,0 +1,13 @@
+{
+  "name": "wtfsww-js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cyberwitch/wtfsww-js.git"
+  },
+  "description": "Frontend for wtfsww",
+  "author": "cyberwitch",
+  "version": "0.0.1",
+  "scripts": {
+    "test": ""
+  }
+}
