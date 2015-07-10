@@ -1,0 +1,9 @@
+deploy:
+  provider: divshot
+  environment:
+    master: development
+    staging: staging
+    production: production
+  skip_cleanup: true
+  api_key:
+    secure: FPJxhRrT3SLqWrhS/X7biXZelYAge0zxLwJ695lMGvGbLyVgG45IPwVcerdLNCPxx5llbkSkYDFGOb8IaH2yq18yHnhqpnIMp92It3/kbS1VwkFxSEWZJqc2zZxzhgf1XvMO7OJmNduc4p2UAeUOwjsczJM+yzZAsKGLxLayaBTBc0KrtYzE9nAXcjiTDfJaZ9rfK7j8UE7eI9YP3KGQeJhpgNWl09Noa2OR+lUEqs+7azVplHlPfyASkevIT78kTgmuTzPjjbuF/MZn5pr+9NYydCISEPQlKJ+fSbpCxKG6YTT/Wf9Cfl1HVpKsi2aW7LAGryyrUdfJ9iC600anESH6M4q4y6Jl2G8RORejil+2ip+omQcC/s4DZTy2Z+1exUqdFL3Fz1fVf3yMBtDBpxHU6Bon1WfNm7LEYaoxJsjJ7EhW74CSux2xBCFBpWvN+msUYXHoiHze42vdSdB0ywyLpH+uS41V//ouyVD1nEI9cVOEyRiMO6gNqnCWSws47DhNYh9nyz6rNEZ4jkp0e2RSA8eAbpjA6FQx1MhVFk63a2lDz55rujyP3NkHItoOPXu0SOj29s5sKAY8QL1YKnjXi2RsZbQnYaT0ZCpp3/laRfoJE/PWOze+12PnhKCfnBSyD9t+/ywh+o6k4OUQ887ivwcujHvzm99bdkYwp5E=
