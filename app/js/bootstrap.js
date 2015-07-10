@@ -1,13 +1,13 @@
 require.config({
     paths: {
-        jquery: 'libs/jquery/jquery',
+        jquery: 'libs/jquery/dist/jquery',
         jqueryui: 'libs/jquery-ui/jquery-ui',
-        underscore: 'libs/underscore/underscore',
-        backbone: 'libs/backbone/backbone',
-        handlebars: 'libs/handlebars/handlebars',
-        text: 'libs/text/text',
-        foundation: 'libs/foundation/foundation.min',
-        foundationOffCanvas: 'libs/foundation/foundation/foundation.offcanvas'
+        underscore: 'libs/underscore-amd/underscore',
+        backbone: 'libs/backbone-amd/backbone',
+        handlebars: 'libs/handlebars/handlebars.amd',
+        text: 'libs/requirejs-text/text',
+        foundation: 'libs/foundation/js/foundation',
+        foundationOffCanvas: 'libs/foundation/js/foundation/foundation.offcanvas'
     },
     shim: {
         underscore: {

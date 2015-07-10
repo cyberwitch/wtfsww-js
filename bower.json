@@ -1,0 +1,15 @@
+{
+    "name": "wtfsww-js",
+    "version": "0.0.1",
+    "dependencies": {
+        "requirejs": "latest",
+        "jquery": "latest",
+        "backbone-amd": "latest",
+        "underscore-amd": "latest",
+        "jquery-ui": "latest",
+        "requirejs-text": "latest",
+        "foundation": "latest",
+        "handlebars": "latest",
+        "components-font-awesome": "latest"
+    }
+}
