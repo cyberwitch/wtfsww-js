@@ -1,4 +1,5 @@
 .divshot/
 .divshot-cache/
+.idea/
 app/js/libs/
 node_modules/
