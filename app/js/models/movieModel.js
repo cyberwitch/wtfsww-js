@@ -3,7 +3,7 @@ define([
 ], function(
     BaseModel
 ) {
-    var Movie = BaseModel.extend({
+    var MovieModel = BaseModel.extend({
         defaults: {
             title: null,
             image_url: null,
@@ -13,5 +13,5 @@ define([
         expiration: 60 * 60 * 1000
     });
 
-    return Movie;
+    return MovieModel;
 });

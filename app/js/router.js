@@ -3,30 +3,46 @@ define([
     'underscore',
     'backbone',
     'foundation',
+    'routefilter',
+    'models/sessionModel',
+    'views/friendListView',
     'views/homeView',
+    'views/loginView',
     'views/mainCompositorView',
+    'views/movieListView',
     'views/movieView',
+    'views/profileView',
     'views/search/movieResultsView'
 ], function(
     $,
     _,
     Backbone,
     Foundation,
+    Routefilter,
+    SessionModel,
+    FriendListView,
     HomeView,
+    LoginView,
     MainCompositorView,
+    MovieListView,
     MovieView,
+    ProfileView,
     MovieResultsView
-    ) {
+) {
     var AppRouter = Backbone.Router.extend({
         routes: {
-            'home': 'home',
+            'login': 'login',
+            'logout': 'logout',
+            'profile': 'profile',
+            'profile/friends': 'friendList',
+            'profile/movies': 'movieList',
             'search/:query': 'search',
             'movies/:id': 'movie',
             '*actions': 'home'
         },
 
         initialize: function() {
-            this.homeView = new HomeView();
+            this.sessionModel = SessionModel.getInstance();
 
             this.mainCompositorView = new MainCompositorView();
 
@@ -34,8 +50,35 @@ define([
             $(document).foundation();
         },
 
+        before: function(route) {
+            if (route != 'login' && !this.sessionModel.isAuthenticated()) {
+                Backbone.history.navigate('login', {trigger: true});
+                return false;
+            }
+        },
+
+        login: function() {
+            this.mainCompositorView.setContentView(new LoginView(), 'Login');
+        },
+
+        logout: function() {
+            this.sessionModel.logout();
+        },
+
+        profile: function() {
+            this.mainCompositorView.setContentView(new ProfileView(), 'Profile');
+        },
+
+        friendList: function() {
+            this.mainCompositorView.setContentView(new FriendListView(), 'My Friends');
+        },
+
+        movieList: function() {
+            this.mainCompositorView.setContentView(new MovieListView(), 'My Movies');
+        },
+
         home: function() {
-            this.mainCompositorView.setContentView(this.homeView, 'Home');
+                this.mainCompositorView.setContentView(new HomeView(), 'Home');
         },
 
         search: function(query) {

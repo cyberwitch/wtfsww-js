@@ -4,7 +4,8 @@ define([
     'foundation',
     'foundationOffCanvas',
     'handlebars',
-    'models/sidebar',
+    'models/sessionModel',
+    'models/sidebarModel',
     'views/baseView',
     'views/search/searchbarView',
     'text!templates/sidebar.html'
@@ -14,7 +15,8 @@ define([
     Foundation,
     FoundationOffCanvas,
     Handlebars,
-    Sidebar,
+    SessionModel,
+    SidebarModel,
     BaseView,
     SearchbarView,
     sidebarTemplate
@@ -22,7 +24,9 @@ define([
     var SidebarView = BaseView.extend({
         template: Handlebars.compile(sidebarTemplate),
 
-        model: new Sidebar(),
+        model: new SidebarModel(),
+
+        sessionModel: SessionModel.getInstance(),
 
         events: {
             'click a': 'onItemClick'
@@ -32,10 +36,15 @@ define([
             BaseView.prototype.initialize.call(this);
 
             this.searchbarView = new SearchbarView({sidebarView: this});
+
+            this.sessionModel.on('change', this.render, this);
         },
 
         render: function() {
-            this.$el.html(this.template(this.model.toJSON()));
+            this.$el.html(this.template({
+                sections: this.sessionModel.isAuthenticated() ? this.model.get('authenticated') : this.model.get('unauthenticated'),
+                isAuthenticated: this.sessionModel.isAuthenticated()
+            }));
             this.$('.searchbar').html(this.searchbarView.render().el);
 
             return this;

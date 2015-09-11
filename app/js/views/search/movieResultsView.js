@@ -2,21 +2,21 @@ define([
     'jquery',
     'backbone',
     'handlebars',
-    'collections/movieCollection',
+    'collections/searchMovieCollection',
     'views/baseView',
     'text!templates/search/resultsList.html'
 ], function(
     $,
     Backbone,
     Handlebars,
-    MovieCollection,
+    SearchMovieCollection,
     BaseView,
     resultsListTemplate
 ) {
     var MovieResultsView = BaseView.extend({
         template: Handlebars.compile(resultsListTemplate),
 
-        collection: MovieCollection.getInstance(),
+        collection: SearchMovieCollection.getInstance(),
 
         events: {
             'click a': 'navigateToMovie'

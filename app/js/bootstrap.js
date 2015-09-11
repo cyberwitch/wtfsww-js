@@ -1,9 +1,10 @@
 require.config({
     paths: {
-        jquery: 'libs/jquery/dist/jquery',
+        jquery: 'libs/routefilter/libs/jquery/jquery',
         jqueryui: 'libs/jquery-ui/jquery-ui',
-        underscore: 'libs/underscore-amd/underscore',
-        backbone: 'libs/backbone-amd/backbone',
+        underscore: 'libs/routefilter/libs/underscore',
+        backbone: 'libs/routefilter/libs/backbone',
+        routefilter: 'libs/routefilter/dist/backbone.routefilter',
         handlebars: 'libs/handlebars/handlebars.amd',
         text: 'libs/requirejs-text/text',
         foundation: 'libs/foundation/js/foundation',
@@ -16,6 +17,9 @@ require.config({
         backbone: {
             deps: ['underscore', 'jquery'],
             exports: 'Backbone'
+        },
+        routefilter: {
+            deps: ['backbone']
         },
         jqueryui: {
             deps: ['jquery']

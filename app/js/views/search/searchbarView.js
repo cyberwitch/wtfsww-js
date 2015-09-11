@@ -4,7 +4,7 @@ define([
     'handlebars',
     'jqueryui',
     'require',
-    'collections/movieCollection',
+    'collections/searchMovieCollection',
     'views/baseView',
     'text!templates/search/searchbar.html',
     'text!templates/search/searchbarItem.html'
@@ -14,7 +14,7 @@ define([
     Handlebars,
     JQueryUI,
     Require,
-    MovieCollection,
+    SearchMovieCollection,
     BaseView,
     searchbarTemplate,
     searchbarItemTemplate
@@ -24,7 +24,7 @@ define([
 
         itemTemplate: Handlebars.compile(searchbarItemTemplate),
 
-        collection: MovieCollection.getInstance(),
+        collection: SearchMovieCollection.getInstance(),
 
         events: {
             'submit form': 'search',

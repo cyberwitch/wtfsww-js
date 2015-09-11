@@ -1,5 +1,7 @@
 {
   "name": "wtfsww",
   "root": "./app/",
-  "clean_urls": false
+  "routes": {
+    "/*": "index.html"
+  }
 }

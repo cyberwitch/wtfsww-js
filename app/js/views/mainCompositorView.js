@@ -33,6 +33,10 @@ define([
 
         renderContentView: function() {
             this.contentView && this.$('#content').html(this.contentView.render().el);
+        },
+
+        renderSidebarView: function() {
+            this.$('.left-off-canvas-menu').html(this.sidebarView.render().el);
         }
     });
 

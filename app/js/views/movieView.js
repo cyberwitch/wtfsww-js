@@ -1,24 +1,18 @@
 define([
-    'jquery',
-    'backbone',
     'handlebars',
-    'collections/movieCollection',
-    'models/movie',
+    'collections/searchMovieCollection',
     'views/baseView',
     'text!templates/movie.html'
 ], function(
-    $,
-    Backbone,
     Handlebars,
-    MovieCollection,
-    Movie,
+    SearchMovieCollection,
     BaseView,
     movieTemplate
 ) {
     var MovieView = BaseView.extend({
         template: Handlebars.compile(movieTemplate),
 
-        collection: MovieCollection.getInstance(),
+        collection: SearchMovieCollection.getInstance(),
 
         initialize: function(options) {
             BaseView.prototype.initialize.call(this);
